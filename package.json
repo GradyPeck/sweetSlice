@@ -20,6 +20,10 @@
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
     "express": "^4.17.1",
+<<<<<<< HEAD
+=======
+    "nodemon": "^2.0.2",
+>>>>>>> f0c8bf6f46c9b9f6c1674f57267f67523e12bcdf
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
