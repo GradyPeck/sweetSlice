@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="pizza-maker-test.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="pizza-form">
+            <div class="ingredients-wrapper">
+                <div class="type-wrapper">
+                    <h1 class="type-name">Toppings</h1>
+                    <div class="topping" *ngFor="let ingr of _toppings">
+                        <label>
+                            <input type="checkbox" [(ngModel)]="ingr.selected">
+                            {{ingr.name}}
+                        </label>
+                        <span class="ingr-price">${{ingr.cost}}</span>
+                    </div>
+                </div>
+                <div class="type-wrapper">
+                    <h1 class="type-name">Frosting</h1>
+                    <div class="topping" *ngFor="let ingr of _frostings; index as i">
+                        <label>
+                            <input type="radio" name="frosting" [checked]="i === 0" (change)="chooseFrosting(ingr)">
+                            {{ingr.name}}
+                        </label>
+                        <span class="ingr-price">${{ingr.cost}}</span>
+                    </div>
+                </div>
+                <div class="type-wrapper">
+                    <h1 class="type-name">Crust</h1>
+                    <div class="topping" *ngFor="let ingr of _crusts; index as i">
+                        <label>
+                            <input type="radio" name="crust" [checked]="i === 0" (change)="chooseCrust(ingr)">
+                            {{ingr.name}}
+                        </label>
+                        <span class="ingr-price">${{ingr.cost}}</span>
+                    </div>
+                </div>
+            </div>
+            <button id="btn-add-to-cart" (click)="addToCart()">Add to Cart</button>
+        </div>
+    </body>
+</html>
